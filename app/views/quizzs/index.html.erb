@@ -1,0 +1,11 @@
+<div class="bottom1">
+<div class="div">
+<h1>Quizs</h1>
+<div>
+    <% @quizzs.each do |quiz| %>
+        <p>Category Id:<%= quiz.category_id %></p>
+        <%= link_to quiz.name, quiz %>
+    <% end %>
+</div>
+</div>
+</div>

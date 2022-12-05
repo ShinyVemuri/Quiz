@@ -1,0 +1,14 @@
+<div class="bottom">
+
+<div class="div2">
+<h1>Result</h1>
+
+    <% @answers.each do |answer| %>
+        <p>Original answer: <%= Question.find(answer.question_id).question%></p>
+        <p>your answer: <%=  answer.answer %></p>
+        <p>Original answer: <%= Question.find(answer.question_id).correct_answer%></p>
+        
+    <% end %>
+
+</div>
+</div>

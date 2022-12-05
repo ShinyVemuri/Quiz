@@ -1,0 +1,20 @@
+<div class="bottom">
+
+<div class="div2">
+<h1>Result</h1>
+<div>
+    
+    <% Answer.all.each do |answer| %>
+        <p>Original answer: <%= Question.find(answer.question_id).question%></p>
+        <p>your answer: <%=  answer.answer %></p>
+        <p>Original answer: <%= Question.find(answer.question_id).correct_answer%></p>
+        <% if  Question.find(answer.question_id).correct_answer == answer.answer %>
+            <p> Answer is  correct </p>
+        <% else %>
+            <p> Answer is wrong</p>
+        <% end %>
+    <% end %>
+ 
+</div>
+</div>
+</div>

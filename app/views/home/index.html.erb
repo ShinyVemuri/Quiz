@@ -1,0 +1,28 @@
+<div class="bottom">
+<div class="div3">
+<% if current_user %>
+    <% if current_user.admin? %>
+        <%= link_to "Add Category", new_category_path, class: "btn btn-secondary" %><br>
+        <%= link_to "Add Quiz", new_quizz_path, class: "btn btn-secondary" %><br>
+        <%= link_to "Add Question", new_question_path, class: "btn btn-secondary" %><br>
+    <% else %>
+        <div class=""><center>
+            <% @categories.each do |category| %>
+            <%= link_to category.category, category, class: "btn btn-secondary" %><br />
+            <% end %></center>
+        </div><br>
+    <% end %>
+    
+<% else %>
+    <div class="">
+    <center>
+    <p>You are not signed in.</p>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary" %><br>
+    </center>
+    <br />
+    </div>
+    <br />
+    <%= link_to "Login", new_user_session_path, class: "btn btn-secondary" %>
+<% end %>
+</div>
+</div>

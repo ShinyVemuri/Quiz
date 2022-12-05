@@ -1,0 +1,11 @@
+<div class="bottom">
+
+<div class="div3">
+<h1>Quizs</h1>
+<div>
+    <% Quizz.where(category_id:@category.id).each do |quiz| %>
+        <p>Quiz Name: <%= link_to quiz.name, quiz %></p>
+    <% end %>
+</div>
+</div>
+</div>

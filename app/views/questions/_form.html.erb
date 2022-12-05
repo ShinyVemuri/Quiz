@@ -1,0 +1,57 @@
+<%= form_with model: question do |form| %>
+  
+    <div>
+      <%= form.label :question %><br>
+      <%= form.text_field :question %>
+      <% question.errors.full_messages_for(:question).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :quizid %><br>
+      <%= form.number_field :quizz_id %>
+      <% question.errors.full_messages_for(:question).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :option1 %><br>
+      <%= form.text_field :option %>
+      <% question.errors.full_messages_for(:question).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :option2 %><br>
+      <%= form.text_field :option2 %>
+      <% question.errors.full_messages_for(:question).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :option3 %><br>
+      <%= form.text_field :option3 %>
+      <% question.errors.full_messages_for(:question).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :option4 %><br>
+      <%= form.text_field :option4 %>
+      <% question.errors.full_messages_for(:question).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :correct_answer %><br>
+      <%= form.text_field :correct_answer %>
+      <% question.errors.full_messages_for(:question).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit "Save", class:  "btn" %>
+    </div>
+  
+<% end %>

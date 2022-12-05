@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags("application") %>
+  </head>
+
+  <body>
+    <nav class="navbar" style="background-color: #6f42c1;">
+    <a class="navbar-brand" href=" <%= root_path %> ">
+    <span class="navtext">Quizzoo</span>
+    </a>
+    
+    <% if current_user %>
+    <span><%= button_to "Log out", destroy_user_session_path, class: "btn btn-secondary", method: :delete %></span>
+    <% end %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

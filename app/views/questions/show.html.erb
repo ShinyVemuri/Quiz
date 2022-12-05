@@ -1,0 +1,11 @@
+<div class="div1">
+<h3> Questions</h3>
+<% Question.all.each do |question| %>
+  <p>Question:<%= question.question %></p>
+    <%= question.option %>
+    <%= question.option2 %>
+    <%= question.option3 %>
+    <%= question.option4 %><br>
+    <%= question.correct_answer %>
+<% end %>
+</div>    

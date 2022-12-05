@@ -1,0 +1,22 @@
+<%= form_with model: quizz do |form| %>
+  
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% quizz.errors.full_messages_for(:quizz).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :categoryid %><br>
+      <%= form.text_field :category_id %>
+      <% quizz.errors.full_messages_for(:quizz).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit "Save", class:  "btn" %>
+    </div>
+  
+<% end %>

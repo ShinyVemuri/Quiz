@@ -1,0 +1,38 @@
+<div class="bottom">
+<div class="div3">
+
+   <h4> Quiz Name: </h4><%= @quizz.name %>
+     
+<h4>Questions</h4>
+
+    <% Question.where(quizz_id:@quizz.id).each do |question| %>
+        <%= question.question %><br>
+        <%= question.option %>
+        <%= question.option2 %>
+        <%= question.option3 %>
+        <%= question.option4 %>
+  
+
+<%= form_with url: "/answers/new", method: :post do |form| %>
+  
+    <div class="field">
+      <%= form.label :answer %><br>
+      <%= form.text_field :answer %>
+    </div>
+    <div class="field">
+      <%= form.hidden_field :question_id, value: question.id %>
+    </div>
+    <div class="field">
+      <%= form.hidden_field :quizz_id, value: @quizz.id %>
+    </div>
+    <br>
+    <div class="actions">
+    <%= form.submit "Save", class:  "btn btn-primary" %>
+    </div>
+  
+<% end %>
+<br>
+<%= button_to "view results", answers_path , method: :get, class: "btn btn-primary" %>
+<% end %>
+</div>
+</div>

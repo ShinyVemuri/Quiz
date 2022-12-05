@@ -1,0 +1,18 @@
+<%= form_with to_xml: @answers do |form| %>
+  
+    <div>
+      <%= form.label :answer %><br>
+      <%= form.text_field :answer %>
+    </div>
+    <div class="field">
+      <%= form.hidden_field :question_id, value: question.id %>
+    </div>
+    <div class="field">
+      <%= form.hidden_field :quizz_id, value: quizz.id %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit "Submit", class:  "btn" %>
+    </div>
+  
+<% end %>

@@ -1,0 +1,15 @@
+<div class="bottom1">
+<div class="div">
+<h1>Questions</h1>
+<div>
+    <% Question.where(quizz_id:@quizz.id).each do |question| %>
+        
+        <%= question.question %><br>
+        <%= question.option %>
+        <%= question.option2 %>
+        <%= question.option3 %>
+        <%= question.option4 %><br>
+    <% end %>
+</div>
+</div>
+</div>
