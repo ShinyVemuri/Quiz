@@ -6,10 +6,12 @@
         <%= link_to "Add Quiz", new_quizz_path, class: "btn btn-secondary" %><br>
         <%= link_to "Add Question", new_question_path, class: "btn btn-secondary" %><br>
     <% else %>
-        <div class=""><center>
+        <div class="">
+        <center>
             <% @categories.each do |category| %>
             <%= link_to category.category, category, class: "btn btn-secondary" %><br />
-            <% end %></center>
+            <% end %>
+        </center>
         </div><br>
     <% end %>
     
